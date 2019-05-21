@@ -21,4 +21,10 @@ class MainCoordinator: Coordinator {
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: false)
     }
+    
+    func openRepositoryDetails(_ repository: RepositoryViewModel) {
+        let vc = RepositoryDetailsController.instantiate()
+        vc.repositoryViewModel = repository
+        navigationController.pushViewController(vc, animated: true)
+    }
 }
