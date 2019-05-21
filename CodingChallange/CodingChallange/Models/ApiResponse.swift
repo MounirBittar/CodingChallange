@@ -1,5 +1,5 @@
 //
-//  ApiRoute.swift
+//  ApiResponse.swift
 //  CodingChallange
 //
 //  Created by Mounir Bittar on 5/20/19.
@@ -8,6 +8,8 @@
 
 import Foundation
 
-struct ApiRoute {
-    static let getRepositories = "search/repositories"
+struct ApiResponse: Decodable {
+    let total_count: Int
+    let incomplete_results: Bool
+    let items: [Repository]
 }

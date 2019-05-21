@@ -1,5 +1,5 @@
 //
-//  ApiRoute.swift
+//  Owner.swift
 //  CodingChallange
 //
 //  Created by Mounir Bittar on 5/20/19.
@@ -8,6 +8,8 @@
 
 import Foundation
 
-struct ApiRoute {
-    static let getRepositories = "search/repositories"
+struct Owner: Decodable {
+    let id: Int
+    let login: String?
+    let avatar_url: String?
 }

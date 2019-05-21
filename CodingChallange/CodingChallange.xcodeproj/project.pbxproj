@@ -20,6 +20,12 @@
 		408E216E2292D1FA00B88DB9 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E216D2292D1FA00B88DB9 /* Service.swift */; };
 		408E21732292D4F700B88DB9 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E21722292D4F600B88DB9 /* AppConfig.swift */; };
 		408E21762292D70100B88DB9 /* ApiRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E21752292D70100B88DB9 /* ApiRoute.swift */; };
+		408E218222941CBD00B88DB9 /* RepositoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 408E218022941CBD00B88DB9 /* RepositoryCell.xib */; };
+		408E218322941CBD00B88DB9 /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E218122941CBD00B88DB9 /* RepositoryCell.swift */; };
+		408E218722941CCE00B88DB9 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E218422941CCE00B88DB9 /* ApiResponse.swift */; };
+		408E218822941CCE00B88DB9 /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E218522941CCE00B88DB9 /* Owner.swift */; };
+		408E218922941CCE00B88DB9 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E218622941CCE00B88DB9 /* Repository.swift */; };
+		408E218B22941CE700B88DB9 /* RepositoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E218A22941CE700B88DB9 /* RepositoryViewModel.swift */; };
 		EA80BA6654B84430367EDA7E /* Pods_CodingChallange.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 817F05CABF859D884227A5C1 /* Pods_CodingChallange.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +57,12 @@
 		408E216D2292D1FA00B88DB9 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		408E21722292D4F600B88DB9 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		408E21752292D70100B88DB9 /* ApiRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRoute.swift; sourceTree = "<group>"; };
+		408E218022941CBD00B88DB9 /* RepositoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RepositoryCell.xib; sourceTree = "<group>"; };
+		408E218122941CBD00B88DB9 /* RepositoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
+		408E218422941CCE00B88DB9 /* ApiResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
+		408E218522941CCE00B88DB9 /* Owner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
+		408E218622941CCE00B88DB9 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		408E218A22941CE700B88DB9 /* RepositoryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryViewModel.swift; sourceTree = "<group>"; };
 		4511496BC3E01FE4B2340E81 /* Pods_CodingChallangeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CodingChallangeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D75BA306BAF70FC71C61F23 /* Pods-CodingChallange.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodingChallange.release.xcconfig"; path = "Target Support Files/Pods-CodingChallange/Pods-CodingChallange.release.xcconfig"; sourceTree = "<group>"; };
 		817F05CABF859D884227A5C1 /* Pods_CodingChallange.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CodingChallange.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,6 +149,9 @@
 		408E21642292C94100B88DB9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				408E218422941CCE00B88DB9 /* ApiResponse.swift */,
+				408E218522941CCE00B88DB9 /* Owner.swift */,
+				408E218622941CCE00B88DB9 /* Repository.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -144,6 +159,8 @@
 		408E21652292C94E00B88DB9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				408E218122941CBD00B88DB9 /* RepositoryCell.swift */,
+				408E218022941CBD00B88DB9 /* RepositoryCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -151,6 +168,7 @@
 		408E21672292CFBB00B88DB9 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				408E218A22941CE700B88DB9 /* RepositoryViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -289,6 +307,7 @@
 				408E21482292BC4E00B88DB9 /* LaunchScreen.storyboard in Resources */,
 				408E21452292BC4E00B88DB9 /* Assets.xcassets in Resources */,
 				408E21432292BC4D00B88DB9 /* Main.storyboard in Resources */,
+				408E218222941CBD00B88DB9 /* RepositoryCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,14 +389,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				408E218322941CBD00B88DB9 /* RepositoryCell.swift in Sources */,
+				408E218B22941CE700B88DB9 /* RepositoryViewModel.swift in Sources */,
 				408E21402292BC4D00B88DB9 /* RepositoryController.swift in Sources */,
 				408E21732292D4F700B88DB9 /* AppConfig.swift in Sources */,
+				408E218722941CCE00B88DB9 /* ApiResponse.swift in Sources */,
 				408E216E2292D1FA00B88DB9 /* Service.swift in Sources */,
 				408E213E2292BC4D00B88DB9 /* AppDelegate.swift in Sources */,
 				408E21762292D70100B88DB9 /* ApiRoute.swift in Sources */,
 				408E215E2292C06000B88DB9 /* Coordinator.swift in Sources */,
+				408E218822941CCE00B88DB9 /* Owner.swift in Sources */,
 				408E21622292C28A00B88DB9 /* MainCoordinator.swift in Sources */,
 				408E21602292C10900B88DB9 /* Storyboarded.swift in Sources */,
+				408E218922941CCE00B88DB9 /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
