@@ -31,4 +31,26 @@ class CodingChallangeTests: XCTestCase {
         }
     }
 
+    /// The Below functional test, tests if a crash occurs when no data returns from api call
+    /// test handling null response
+    func testCallToGithub() {
+        var responseError: Error?
+        var apiResponse: ApiResponse?
+        let expectation = self.expectation(description: "fetching data should not crash when null data returns")
+
+        apiManager.fetchRepositories(date: "1990-12-12", page: 2000) { (response, error) in
+            responseError = error
+            apiResponse = response
+            expectation.fulfill()
+        }
+        waitForExpectations(timeout: 5, handler: nil)
+
+        XCTAssertNil(responseError)
+        XCTAssertNotNil(apiResponse)
+        XCTAssertNil(apiResponse?.total_count)
+        XCTAssertNil(apiResponse?.items)
+        XCTAssertNil(apiResponse?.incomplete_results)
+
+    }
+   
 }

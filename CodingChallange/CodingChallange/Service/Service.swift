@@ -18,7 +18,6 @@ class Service: NSObject {
         URLSession.shared.dataTask(with: url) { (data, resp, err) in
             if let err = err {
                 completion(nil, err)
-                print("Failed to fetch repositories:", err)
                 return
             }
             

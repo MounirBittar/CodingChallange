@@ -47,8 +47,10 @@ class RepositoryViewModel {
                 self.repositoryViewModels = []
             }
             /// if the results are incomplete then there more data to load
-            self.isAllLoaded = response!.incomplete_results
-            self.repositoryViewModels.append(contentsOf: response?.items.map({return RepositoryViewModel(repository: $0)}) ?? [])
+            self.isAllLoaded = response!.incomplete_results ?? true
+            if let items = response?.items {
+                self.repositoryViewModels.append(contentsOf: items.map({return RepositoryViewModel(repository: $0)}))
+            }
             completion(nil)
         })
     }

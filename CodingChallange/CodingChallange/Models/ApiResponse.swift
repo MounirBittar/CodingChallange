@@ -9,7 +9,7 @@
 import Foundation
 
 struct ApiResponse: Decodable {
-    let total_count: Int
-    let incomplete_results: Bool
-    let items: [Repository]
+    let total_count: Int?
+    let incomplete_results: Bool?
+    let items: [Repository]?
 }
