@@ -13,9 +13,11 @@ class RepositoryController: UITableViewController, Stroyboarded {
     
     weak var coordinator: MainCoordinator?
     private var repositoryViewModels = [RepositoryViewModel]()
-    private var isAllLoaded = false
-    private var current_page = 0
     private let cellId = "RepositoryCell"
+    /// isAllLoaed used to identify if all repositories are loaded
+    private var isAllLoaded = false
+    /// current_page indicates last page loaded
+    private var current_page = 0
     
     // MARK: - Life Cycle
     
@@ -27,8 +29,10 @@ class RepositoryController: UITableViewController, Stroyboarded {
     
     // MARK: - private methods
     
+    /// fetchData() is used to fetch stared repositories from github and display results on tableView
     @objc fileprivate func fetchData() {
         current_page += 1
+        /// (Date() - 30.days) gets the date 30 days ago from today
         apiManager.fetchRepositories(date: (Date() - 30.days).toFormat("yyyy-MM-dd"), page: current_page, completion: { (response, error) in
             self.tableView.refreshControl?.endRefreshing()
             if let error = error {
@@ -38,12 +42,14 @@ class RepositoryController: UITableViewController, Stroyboarded {
             if self.current_page == 1 {
                 self.repositoryViewModels = []
             }
+            /// if the results are incomplete then there more data to load
             self.isAllLoaded = response!.incomplete_results
             self.repositoryViewModels.append(contentsOf: response?.items.map({return RepositoryViewModel(repository: $0)}) ?? [])
             self.tableView.reloadData()
         })
     }
     
+    ///This function used to setup tableView and refresh control
     fileprivate func setupTableView() {
         let cell = UINib(nibName: cellId, bundle: nil)
         tableView.register(cell, forCellReuseIdentifier: cellId)
@@ -51,6 +57,7 @@ class RepositoryController: UITableViewController, Stroyboarded {
         tableView.tableFooterView = UIView()
         tableView.refreshControl?.addTarget(self, action: #selector(refresh(sender:)), for: .valueChanged)
     }
+    ///This function used to reload tableView and reloads repositories from first page
     @objc fileprivate func refresh(sender:AnyObject) {
         current_page = 0
         fetchData()
@@ -64,6 +71,7 @@ class RepositoryController: UITableViewController, Stroyboarded {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! RepositoryCell
+        ///if cell is loading show loading indicator else display repository content
         cell.configure(with: isLoadingCell(for: indexPath) ? .none : repositoryViewModels[indexPath.row])
         return cell
     }
